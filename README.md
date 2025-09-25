@@ -8,8 +8,8 @@
 
 ## 용어
 
-**Local Repository**: 로컬 저장소  // .git  
-**Remote Repository**: 원격 저장소  // origin  
+**Local Repository**: 로컬 저장소 // .git  
+**Remote Repository**: 원격 저장소 // origin  
 **Working Directory**: 파일 수정이나 저장 등의 작업을 하는 공간  
 **Staging Area**: 저장소에 커밋하기 전에 준비하는 위치  
 **Commit**: 현재의 변경된 작업 상태를 스테이징 해서 점검하고 나면, 확정하고 작업 내역을 저장소에 저장하는 작업  
@@ -83,7 +83,7 @@
 * `#`로 주석 작성
 * `!`로 시작하는 패턴의 파일은 미적용
 * `/`로 시작하면 하위 폴더는 미적용
-* `/`로 끝나면 폴더만 해당  // 아니면 폴더와 파일 둘 다 해당
+* `/`로 끝나면 폴더만 해당 // 아니면 폴더와 파일 둘 다 해당
 
 ## 명령어
 
@@ -117,10 +117,10 @@ HEAD는 `@` 기호로 대체 가능
 
 ### 2. 스테이징 및 커밋
 
-스테이지 상태 확인: `git status`  // 요약하는 옵션: `-s`  
+스테이지 상태 확인: `git status` // 요약하는 옵션: `-s`  
 스테이지 영역에 파일 추가: `git add "<file_name>"`  
 스테이지 영역에 수정된 모든 파일 추가: `git add -A`, `git add -all`  
-스테이지 영역 초기화: `git reset`    // 커밋 되돌리기 항목 참고
+스테이지 영역 초기화: `git reset`   // 커밋 되돌리기 항목 참고
 커밋: `git commit`
 
 * 직전 커밋에 덮어 씌우는 옵션: `--amend`
@@ -133,8 +133,8 @@ HEAD는 `@` 기호로 대체 가능
 저장소와 작업 공간에서 파일 이름 변경: `git mv "<old_name>" "<new_name>"`  
 저장소와 작업 공간에서 파일 삭제:
 
-* `git rm "<file_name>"`  // 스테이지 영역에서만 삭제하는 옵션: `--cached`
-* `git restore "<file_name>"`  // 스테이지 영역에서만 삭제하는 옵션: `--staged`
+* `git rm "<file_name>"` // 스테이지 영역에서만 삭제하는 옵션: `--cached`
+* `git restore "<file_name>"` // 스테이지 영역에서만 삭제하는 옵션: `--staged`
 
 ### 3. 커밋 이력
 
@@ -149,13 +149,13 @@ HEAD는 `@` 기호로 대체 가능
 * 커밋마다 한 줄로 커밋 내역 출력하는 옵션: `--oneline`
 
 요약된 커밋 내역 출력: `git shortlog`  
-파일 이력 출력: `git log "<file_name>"`  // 변경 내역을 비교하는 옵션: `-p`  
+파일 이력 출력: `git log "<file_name>"` // 변경 내역을 비교하는 옵션: `-p`  
 파일에 대한 모든 수정 내역 출력: `git blame "<file_name>"`  
 
 ### 4. 커밋 정보 비교(변화가 생긴 파일 목록만 표기하는 옵션: `--name-only`)
 
 커밋의 정보와 수정사항 보기: `git show "<commit_hash>"`  
-최근 커밋과 현재 작업 디렉토리 파일을 비교: `git diff`  // 최근 커밋과 현재 스테이지된 파일 비교하는 옵션: `--staged`  
+최근 커밋과 현재 작업 디렉토리 파일을 비교: `git diff` // 최근 커밋과 현재 스테이지된 파일 비교하는 옵션: `--staged`  
 헤드에서 x번째 떨어진 커밋을 기준으로 헤드에서 y번째 떨어진 커밋을 비교: `git diff HEAD~x HEAD~y`  
 1번 커밋 해시를 기준으로 2번 커밋 해시를 비교: `git diff "<commit_hash_1>" "<commit_hash_2>"`  
 현재 브랜치와 해당 브랜치를 비교: `git diff "<branch_name>"`  
@@ -184,13 +184,13 @@ HEAD는 `@` 기호로 대체 가능
 * 병합된 브랜치를 삭제하는 옵션: `-d`, `--delete`
 * 브랜치를 강제로 삭제하는 옵션: `-D`
 
-작업 공간을 해당 브랜치로 전환: `git switch "<branch_name>"`  // 브랜치 생성 후 바로 전환하는 옵션: `-c`  
-현재 브랜치 헤드에 해당 브랜치 헤드를 병합하고 커밋을 생성: `git merge "<branch_name>"`  // Fast-forward가 가능한 경우에는 커밋을 따로 생성하지 않음
+작업 공간을 해당 브랜치로 전환: `git switch "<branch_name>"` // 브랜치 생성 후 바로 전환하는 옵션: `-c`  
+현재 브랜치 헤드에 해당 브랜치 헤드를 병합하고 커밋을 생성: `git merge "<branch_name>"` // Fast-forward가 가능한 경우에는 커밋을 따로 생성하지 않음
 
 * 편집기를 열기 않고 제목을 추가하는 옵션: `-m "<commit_message_header>"`
 * 편집기를 열기 않고 제목과 본문을 추가하는 옵션: `-m "<commit_message_header>" -m "<commit_message_body>"`
 * 병합될 브랜치의 모든 커밋들을 하나의 커밋으로 합치는 옵션: `--squash`
-* Fast-forward가 가능한 경우라도 하지 않게 하는 옵션: `--no-ff`  // 깔끔한 커밋 기록만 있어야 하는 메인 브랜치에 유용
+* Fast-forward가 가능한 경우라도 하지 않게 하는 옵션: `--no-ff` // 깔끔한 커밋 기록만 있어야 하는 메인 브랜치에 유용
 
 현재 브랜치의 조상 커밋을 해당 브랜치 헤드로 재배치: `git rebase "<branch_name>"`  
 현재 브랜치의 최근 n 개의 커밋을 수정하기 위해 설정 문서와 상호작용 : `git rebase HEAD~n`  
@@ -219,16 +219,16 @@ HEAD는 `@` 기호로 대체 가능
 * 경량 태그는 단순히 커밋 해시의 주소를 가리키는 포인터다
 * 커밋 해시 대신에 경량 태그 이름을 사용하면 태그 이름이 커밋 해시로 자동 역참조 된다
 
-현재 브랜치 헤드에 주석 달린 태그 지정: `git tag -a "<annotated_tag_name>"`  // 편집기를 열기 않고 태그 메시지를 추가하는 옵션: `-m "<tag_message>"`  
-해당 커밋에 주석 달린 태그 지정: `git tag -a "<annotated_tag_name>" "<commit_hash>"`  // 편집기를 열기 않고 태그 메시지를 추가하는 옵션: `-m "<tag_message>"`  
+현재 브랜치 헤드에 주석 달린 태그 지정: `git tag -a "<annotated_tag_name>"` // 편집기를 열기 않고 태그 메시지를 추가하는 옵션: `-m "<tag_message>"`  
+해당 커밋에 주석 달린 태그 지정: `git tag -a "<annotated_tag_name>" "<commit_hash>"` // 편집기를 열기 않고 태그 메시지를 추가하는 옵션: `-m "<tag_message>"`  
 
 * 주석 달린 태그는 자체 태그 해시의 주소를 가리키는 포인터다
 * 주석 달린 태그 해시는 커밋 해시의 주소를 가리키는 포인터다
-* 따라서 커밋 해시 대신에 주석 달린 태그 이름을 사용하려면 역참조 과정을 한 번 거쳐야 한다  // 주석 달린 태그에 대한 역참조: `<annotated_tag_name>^{}`
+* 따라서 커밋 해시 대신에 주석 달린 태그 이름을 사용하려면 역참조 과정을 한 번 거쳐야 한다 // 주석 달린 태그에 대한 역참조: `<annotated_tag_name>^{}`
 
 로컬 저장소의 태그 목록 보기: `git tag` // 조건에 맞는 태그 보기 옵션: `-l "<part_of_tag_name>*"`, `--list "<part_of_tag_name>*"`  
 해당 태그에 대한 정보 보기: `git show "<tag_name>"`  
-모든 태그가 가리키는 주소를 보기: `git show-ref --tags`  // 주석 달린 태그의 역참조 정보까지 보는 옵션: `--dereference`  
+모든 태그가 가리키는 주소를 보기: `git show-ref --tags` // 주석 달린 태그의 역참조 정보까지 보는 옵션: `--dereference`  
 태그 이름 변경: `git "<old_tag_name>" "<new_tag_name>"`  
 로컬 저장소에서 해당 태그 삭제: `git tag -d "<tag_name>"`, `git tag --delete "<tag_name>"`  
 원격 저장소로 해당 태그 올리기: `git push "<remote_repo_name>" "<tag_name>"`  
@@ -238,7 +238,7 @@ HEAD는 `@` 기호로 대체 가능
 
 ### 9. 작업 임시 저장(추적 상태인 파일에 한해서만 가능)
 
-현재 변경 사항을 임시 저장: `git stash`  // 메시지를 추가하는 옵션: `-m "<stash_message>"`  
+현재 변경 사항을 임시 저장: `git stash` // 메시지를 추가하는 옵션: `-m "<stash_message>"`  
 임시 저장된 작업 내역 보기: `git stash list`  
 해당 임시 저장된 작업 적용: `git stash apply "<stash_name>"`  
 해당 임시 저장된 작업 삭제: `git stash drop "<stash_name>"`  
@@ -247,6 +247,6 @@ HEAD는 `@` 기호로 대체 가능
 ### 10. 서브 모듈
 
 해당 경로에 서브 모듈 추가: `git submodule add "<submodule_url>" "<submodule_path>"`  
-서브 모듈 정보를 초기화하고 다운로드: `git submodule init && git submodule update`  // 서브 모듈이 포함된 저장소를 클론 했을 경우에 사용  
+서브 모듈 정보를 초기화하고 다운로드: `git submodule init && git submodule update` // 서브 모듈이 포함된 저장소를 클론 했을 경우에 사용  
 서브 모듈 상태 확인: `git submodule status`  
 서브 모듈 삭제: `git submodule deinit -f "<submodule_path>" && rm -rf ".git/modules/<submodule_name>" && git rm -rf "<submodule_path>"`  
