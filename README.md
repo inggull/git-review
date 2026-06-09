@@ -37,7 +37,9 @@
 <commit_message_footer>
 ```
 
-### 1. 머리글(Header): `<type>(scope): <subject>`
+### 1. 머리글(Header): `<type>(<scope>): <subject>`
+
+예시) `feat(main.cpp): IP를 직접 입력에서 환경 변수로 받도록 수정한다`
 
 **type**: 커밋의 종류
 
@@ -119,8 +121,8 @@ HEAD는 `@` 기호로 대체 가능
 
 스테이지 상태 확인: `git status` // 요약하는 옵션: `-s`  
 스테이지 영역에 파일 추가: `git add "<file_name>"`  
-스테이지 영역에 수정된 모든 파일 추가: `git add -A`, `git add -all`  
-스테이지 영역 초기화: `git reset`   // 커밋 되돌리기 항목 참고
+스테이지 영역에 수정된 모든 파일 추가: `git add -A`, `git add -all`, `git add .`  
+스테이지 영역 초기화: `git reset`   // 커밋 되돌리기 참고  
 커밋: `git commit`
 
 * 직전 커밋에 덮어 씌우는 옵션: `--amend`
